@@ -1,6 +1,7 @@
 let data=[];
 
 function fetchData(){
+     // filtrele butonu görünür olsun
     let filterBox=document.querySelector("#filterBox");
     if (filterBox.style.display == "none") {
         filterBox.style.display = "flex";
@@ -8,20 +9,24 @@ function fetchData(){
         filterBox.style.display = "flex";
     }
     try {
+        // verilerin çekildiği yer
         fetch("data.json")
         .then(response => {
             return response.json();
         })
         .then(responseData => {
+             // okunan verinin array'e aktarılması
             data=responseData;
+            // verinin html'de listelenmesi için yazılan fonksiyon çağrılıyor
             listData(responseData);
         })  
+        // işlem sırasında hata ile karşılaşılırsa catch'e düşüp hatayı bildiriyor
     } catch (e) {
         alert(e);
     }
     
 }
-
+// verinin belirtilen tagler içerisinde listelenmesini sağlayan fonksiyon
 const listData = (data) => {
     let list = document.querySelector(".list");
     list.innerHTML = data.map(element => {
@@ -37,7 +42,7 @@ const listData = (data) => {
         `;
     })
 }
-
+// verinin belirtilen seçeneklerle filtrelenmesini sağlayan fonksiyon
 function filterData (filter) {
     let age = document.querySelector("#age");
     let active = document.querySelector("#active");
