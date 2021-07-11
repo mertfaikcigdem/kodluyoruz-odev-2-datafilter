@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Ödev 2 Mert Faik Cigdem</title>
+</head>
+
+<body>
+    <div class="container mt-2">
+        <div class="buttonClass">
+            <button type="button" class="btn btn-primary btn-lg" onclick="fetchData()">Getir</button>
+        </div>
+        <div id="filterBox">
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input type="checkbox" class="form-check-input mt-0" id="age" name="age" value="Resit">
+                    <label class="mx-2" for="age"> Reşit olanları getir</label>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input type="checkbox" class="form-check-input mt-0" id="active" name="active" value="Aktif">
+                    <label class="mx-2" for="active"> Aktif olanları getir</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="fname">İsim baş harfine göre getir</label>
+                <input type="text" placeholder="Baş harfini giriniz." class="form-control" id="fname" name="fname"
+                    maxlength="1">
+            </div>
+            <button class="btn btn-primary btn-lg" onclick="filterData()">Filtrele</button>
+        </div>
+        <ul class="list list-group p-2">
+
+        </ul>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
